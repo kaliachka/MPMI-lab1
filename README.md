@@ -7,3 +7,4 @@
 
 h2 1. Описание архитектуры нейронной сети:
 -----------
+```inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
