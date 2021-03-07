@@ -11,4 +11,4 @@
 
 ```inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))```
 *  Convolutional layer - сверточный 2D-слой, размера 222х222х8, создающий ядро свертки. В качестве параметров задаются количество выходных фильтров = 8 и размерность матрицы ядра 3х3. 
-x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)
+```x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)```
