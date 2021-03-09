@@ -27,4 +27,4 @@
 ---------
 *синяя линия - при валидации
 оранжевая линия - при обучении*
-![screenshot of sample](C:\Users\37544\Documents\methods\1.jfif)
+![alt text](C:\Users\37544\Documents\methods\1.jfif)
