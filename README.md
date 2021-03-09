@@ -44,4 +44,34 @@
 
 4.Графики обучения нейронной сети с количеством сверточных слоев > 3:
 ------
+* Для решения данной задачи мною были добавлены 3 дополнительных сверточных слоя Conv2D и 3 дополнительных слоя подвыборки MaxPool2D.
+* В каждом из сверточных слоев Conv2D было изменено количество шагов(strides = 2).
+* В каждом из слоев подвыборки MaxPool2D было изменено количество шагов(strides = 1).
+```php
+inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3, strides=2)(inputs)
+  x = tf.keras.layers.MaxPool2D(strides=1)(x)
+  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3, strides=2)(x)
+  x = tf.keras.layers.MaxPool2D(strides=1)(x)
+  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3, strides=2)(x)
+  x = tf.keras.layers.MaxPool2D(strides=1)(x)
+  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3, strides=2)(x)
+  x = tf.keras.layers.MaxPool2D(strides=1)(x)
+  x = tf.keras.layers.Flatten()(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
+  ```
+*синяя ломаная линия - при валидации*
 
+*оранжевая ломаная линия - при обучении*
+
+**График метрики точности:**
+
+  ![3](https://user-images.githubusercontent.com/59210216/110455036-011f0200-80d9-11eb-8e63-43791fa5209a.jpg)
+  
+**График функции потерь:**
+
+  ![4](https://user-images.githubusercontent.com/59210216/110455050-05e3b600-80d9-11eb-9302-72c286e11847.jpg)
+
+
+
+  
